@@ -1,0 +1,54 @@
+<html>
+<head>
+<ins>Problem Statement</ins>
+<br>
+Write an IIFE to validate the input provided from a form. The form consists of name, email, phone
+number and address. Here name, email and phone number are mandatory fields. Also validate that the
+given email is a valid email id using JavaScript.
+<hr>
+<br>
+<br>
+
+
+<script>
+function validateForm() {
+var a,b,c,x,d;
+a=document.forms["myForm"]["name"].value;
+b=document.forms["myForm"]["email"].value;
+c=document.forms["myForm"]["phoneno"].value; d = document.forms["myForm"]["email"].value;
+
+//iife
+
+
+function val(u,v,w,z){
+if(u == "" || v== "" || w =="")
+{
+alert("please enter all the details before submission")
+}
+var aa = d.indexOf("@");
+    var bb = d.lastIndexOf(".");
+    if (aa<1 || bb<a+2 || bb+2>=d.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+}
+val(a,b,c,d);
+}
+//
+   
+</script>
+</head>
+<body>
+<form name="myForm" action="demo_form.asp" onsubmit="return validateForm();" method="post">
+Name: <input type="text" name="name"><br><br>
+Email: <input type="text" name="email"><br><br>
+Phone no:<input type="text" name="phoneno"><br><br>
+Address:<textarea rows="4" cols="50">
+ 
+</textarea><br><br>
+
+<input type="submit" value="Submit">
+</form>
+</body>
+
+</html>
